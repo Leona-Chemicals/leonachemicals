@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Leona Chemicals",
-  description: "Website for Leona Chemicals - Indenting Company & Sourcing Agent",
+  description: "We take care of your requirements for raw materials, fine chemicals & intermediates for Pharma, Agro, Dyestuff, Paint, Aromatic & Cosmetic Industries. We handle the entire hassle for your procurement.",
 };
 
 export default function RootLayout({ children }) {

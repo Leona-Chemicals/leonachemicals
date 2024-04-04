@@ -1,148 +1,255 @@
+"use client";
+
 import Image from "next/image";
-import styles from "./page.module.css";
-import Link from "next/link";
+import { productData } from "./productData";
+import { useState } from "react";
+import Iframe from "react-iframe";
 
 export default function Home() {
+  let data = productData;
+  const [search, setsearch] = useState("");
+
+  let searchData = data.filter((row, index) => {
+    return row.includes(search.toUpperCase());
+  });
+
   return (
-    <main id="top" className={styles.main}>
-      <div className={styles.navbar}>
-        <div className={styles.navbarItem}>Home</div>
-        <div className={styles.navbarItem}>Products</div>
-        <div className={styles.navbarItem}>Contact</div>
-      </div>
-
-      {/* Company name, intro */}
-      <div className={styles.titleDiv}>
-        <div className={styles.bgLogoDiv}>
-          <Image src={"/logo.png"} fill={true} className={styles.bgLogo} />
+    <main
+      id="home"
+      className="flex min-h-screen flex-col items-center justify-between"
+    >
+      <div className="relative flex w-full h-auto py-2 md:place-content-end place-content-center border-b border-slate-800">
+        <div className="px-4 mx-2">
+          <a href={"#home"}>
+            <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+              Home
+            </p>
+          </a>
         </div>
-        <div className={styles.titleInnerDiv}>
-          <p className={styles.titleText}>
-            <span className={styles.titleLetter}>L</span>
-            <span className={styles.titleLetter}>e</span>
-            <span className={styles.titleLetter}>o</span>
-            <span className={styles.titleLetter}>n</span>
-            <span className={styles.titleLetter}>a</span>
-            <span className={styles.titleLetter}> </span>
-            <span className={styles.titleLetter}>C</span>
-            <span className={styles.titleLetter}>h</span>
-            <span className={styles.titleLetter}>e</span>
-            <span className={styles.titleLetter}>m</span>
-            <span className={styles.titleLetter}>i</span>
-            <span className={styles.titleLetter}>c</span>
-            <span className={styles.titleLetter}>a</span>
-            <span className={styles.titleLetter}>l</span>
-            <span className={styles.titleLetter}>s</span>
-          </p>
-          <p className={styles.titleSubtext}>
-            <span className={styles.titleSubtextWord}>Indenting </span>
-            <span className={styles.titleSubtextWord}>Company </span>
-            <span className={styles.titleSubtextWord}>& </span>
-            <span className={styles.titleSubtextWord}>Sourcing </span>
-            <span className={styles.titleSubtextWord}>Agent </span>
-          </p>
+
+        <div className="px-4 mx-2">
+          <a href={"#products"}>
+            <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+              Products
+            </p>
+          </a>
+        </div>
+
+        <div className="px-4 mx-2 pr-8">
+          <a href={"#contact"}>
+            <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+              Contact
+            </p>
+          </a>
         </div>
       </div>
 
-      {/* Description, search for products */}
-      <div id="description" className={styles.descriptionDiv}>
-        <div className={styles.descriptionSubDiv}>
-          <p className={styles.descriptionText}>
-            We're here to take care of your requirements for
-            <span className={styles.descriptionSpecialText}>
-              {" "}
-              raw materials, fine chemicals & intermediates
-            </span>{" "}
-            for
-            <span className={styles.descriptionSpecialText}>
-              {" "}
-              Pharma, Agro, Paint, Aromatic & Cosmetic Industries.
-            </span>
-            <br />
-            We handle the entire hassle for your procurement.
-          </p>
+      <div className="mt-11 absolute z-[-2] bg-amber-200/20 w-1/2 min-h-full place-self-start"></div>
+
+      <div className="min-h-screen align-middle place-content-center text-center">
+        <div className="relative flex z-[-1] place-content-center">
+          <Image
+            className="relative opacity-70"
+            src="/logo.png"
+            alt="Next.js Logo"
+            width={270}
+            height={100}
+            priority
+          />
         </div>
-        <div className={styles.productSearchDiv}>
-          <p className={styles.productSearchSubDiv}>
-            View our complete list of products{" "}
-            <Link className={styles.productLink} href={"/products"}>
-              here...
-            </Link>{" "}
+        <h1 className="transition-all select-none	tracking-wider text-5xl xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl font-algerian p-10">
+          <span className="hover:tracking-widest hover:text-yellow-700">L</span>
+          <span className="hover:tracking-widest hover:text-yellow-700">E</span>
+          <span className="hover:tracking-widest hover:text-yellow-700">O</span>
+          <span className="hover:tracking-widest hover:text-yellow-700">N</span>
+          <span className="hover:tracking-widest hover:text-yellow-700">A</span>
+          <span className="hover:tracking-widest hover:text-yellow-700"> </span>
+          <span className="hover:tracking-widest hover:text-yellow-700">C</span>
+          <span className="hover:tracking-widest hover:text-yellow-700">H</span>
+          <span className="hover:tracking-widest hover:text-yellow-700">E</span>
+          <span className="hover:tracking-widest hover:text-yellow-700">M</span>
+          <span className="hover:tracking-widest hover:text-yellow-700">I</span>
+          <span className="hover:tracking-widest hover:text-yellow-700">C</span>
+          <span className="hover:tracking-widest hover:text-yellow-700">A</span>
+          <span className="hover:tracking-widest hover:text-yellow-700">L</span>
+          <span className="hover:tracking-widest hover:text-yellow-700">S</span>
+        </h1>
+        <p className="tracking-wide text-lg hover:text-xl select-none">
+          Indenting Company & Sourcing Agent
+        </p>
+      </div>
+
+      {/* Main */}
+      <div className="relative flex flex-wrap min-h-screen w-full border-y border-slate-800">
+        {/* Information */}
+        <div className="sm:w-1/2 w-full min-h-screen text-center pt-8 sm:border-0 border-b border-slate-900">
+          {/* About us */}
+          <div
+            id="about"
+            className="sm:m-20 m-10 sm:p-16 p-8 border sm:text-xl text-lg border-slate-900 bg-amber-700/30 hover:bg-amber-700/40 rounded"
+          >
+            <p>
+              We're here to take care of your requirements for{" "}
+              <span className="font-bold">
+                raw materials, fine chemicals & intermediates
+              </span>{" "}
+              for{" "}
+              <span className="font-bold">
+                Pharma, Agro, Dyestuff, Paint, Aromatic & Cosmetic Industries.
+              </span>
+            </p>
             <br />
-          </p>
-          <div className={styles.productSearchSubDiv}>
-            <input
-              placeholder="or search for a product..."
-              className={styles.productSearchInput}
+            <p> We handle the entire hassle for your procurement.</p>
+          </div>
+
+          {/* Contact Information */}
+          <div
+            id="contact"
+            className="sm:m-20 m-10 sm:p-16 p-8 border sm:text-xl text-lg border-slate-900 hover:bg-slate-500/40  rounded"
+          >
+            <p>
+              For your import requirements or in case of any further queries,
+              kindly email us at
+            </p>
+            <a href={"mailto:sales@leonachemicals.com"}>
+              <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+                sales@leonachemicals.com
+              </p>
+            </a>
+            <p>or call us at</p>
+
+            <a href={"tel:+91 9930336966"}>
+              <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+                +91 9930336966
+              </p>
+            </a>
+
+            <a href={"tel:+91 9137794481"}>
+              <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+                +91 9137794481
+              </p>
+            </a>
+          </div>
+
+          {/* Timing Information */}
+          <div className="sm:m-20 m-10 sm:p-16 p-8 border sm:text-xl text-lg font-light tracking-wide border-slate-900 hover:bg-slate-900/90 rounded bg-slate-900/80 text-slate-100">
+            <p className="font-bold underline pb-5 tracking-wider">
+              Business Hours
+            </p>{" "}
+            <p> Monday to Friday - 10:00 a.m. to 06:00 p.m. </p>
+            <p> Saturday - 10:00 a.m. to 02:00 p.m. </p>
+            <p> Sunday - Closed </p>
+          </div>
+
+          {/* Career Information */}
+          <div
+            id="careers"
+            className="sm:m-20 m-10 sm:p-16 p-8 border sm:text-xl text-lg border-slate-900 hover:bg-slate-200 rounded"
+          >
+            <p className="font-bold underline pb-5 tracking-wider">
+              Want to work with us?
+            </p>{" "}
+            <p>
+              Looking for candidates with minimum 1 year experience in the field
+              and basic industry knowledge.
+            </p>
+            <br />
+            <p>Send us an email at</p>
+            <a href={"mailto:leonachemicals@gmail.com"}>
+              <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+                leonachemicals@gmail.com
+              </p>
+            </a>
+            <p className="font-bold"></p>{" "}
+          </div>
+
+          <div className="sm:m-20 m-10 min-h-64 border sm:text-xl text-lg border-slate-900 rounded">
+            <div>
+              <p className="p-5 bg-amber-600/20 border-b border-slate-900">
+                Based in Mumbai, India
+              </p>
+            </div>
+            <Iframe
+              url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241316.67292815258!2d72.71637298606544!3d19.082502004737197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1712246228757!5m2!1sen!2sin"
+              width="100%"
+              height="320px"
+              display="inline"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
             />
           </div>
         </div>
-      </div>
 
-      {/* Description, search for products */}
-      <div id="contact" className={styles.descriptionDiv}>
-        <div className={styles.contactSubDiv}>
-          <div className={styles.boxBorder}>
-            <p className={styles.descriptionText}>
-              For your import requirements or in case of any further queries,
-              send us an email - {" "}
-              <span className={styles.descriptionSpecialText}>
-                sales@leonachemicals.com
-              </span>{" "}
-              <br />
-              or give us a call... <br />
-              <span className={styles.descriptionSpecialText}>
-                +91&nbsp;9930336966 +91&nbsp;9137794481
-              </span>
-            </p>
+        {/* Product List */}
+        <div className="sm:w-1/2 w-full min-h-screen place-items-center text-center sm:border-l border-0  border-slate-800">
+          <div id="products">
+            <h1 className="text-xl font-bold pt-5 pb-3"> Product List</h1>
           </div>
-          <br />
-          <br />
-          <br />
+          <div className="relative flex">
+            <input
+              type="search"
+              className="relative m-4 block w-full rounded border border-solid border-slate-400 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-surface outline-none placeholder:text-slate-500 focus:z-[3] focus:border-black focus:shadow-inset focus:outline-none"
+              placeholder="Search for a product..."
+              aria-label="Search"
+              id="productSearchInput"
+              name="productSearchInput"
+              value={search}
+              onChange={(e) => setsearch(e.target.value)}
+            />
+          </div>
           <div
-            className={styles.descriptionText}
-            style={{ backgroundColor: "#2e2e2e", color: "#fff" }}
+            className="grid grid-cols-1 divide-y py-5 m-4"
+            style={{ maxHeight: "130vw", overflowY: "auto" }}
           >
-            <h2>Business Hours</h2>
-            <p>Monday to Friday - 10:00 a.m. - 06:00 p.m.</p>
-            <p>Saturday - 10:00 a.m. - 02:00 p.m.</p>
-            <p>Sunday - Closed</p>
+            {searchData.length !== 0 ? (
+              searchData.map((row, index) => (
+                <p className="py-1 select-none text-sm" key={index}>
+                  {row}
+                </p>
+              ))
+            ) : (
+              <p className="py-2">Product match not found.</p>
+            )}
           </div>
         </div>
-        <div className={styles.productSearchDiv}>
-          <div style={{ paddingTop: "20px" }}>
-            <p style={{ paddingBottom: "20px" }}>Based in Mumbai, India</p>
-            <iframe
-              className={styles.mapDiv}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235937.81450869635!2d72.71935557269366!3d19.08490871466794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1711367093975!5m2!1sen!2sin"
-              width="500"
-              height="350"
-              allowfullscreen=""
-              style={{ borderRadius: "8px" }}
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-      <div id="careers" className={styles.descriptionText} style={{textAlign: "center", padding: "20px"}}>
-        <h2>Want to work with us?</h2><br />
-        <p>Looking for candidates with minimum 1 year experience in the field and basic industry knowledge.
-Send us an email at <br />
-<span className={styles.descriptionSpecialText}>
-leonachemicals@gmail.com</span></p>
       </div>
 
-      {/* footer */}
-      <div className={styles.footer}>
-        <p>
-          <Link className={styles.footerLink} href={"/#top"}>Home</Link>{" | "}
-          <Link className={styles.footerLink} href={"/#description"}>Products</Link>{" | "}
-          <Link className={styles.footerLink}  href={"/#contact"}>Contact Information</Link>{" | "}
-          <Link className={styles.footerLink} href={"/#careers"}>Careers</Link>
-        </p>
-        <p>Copyright © Leona Chemicals 2024</p>
-        <p>Developed by Keane Pereira</p>
+      {/* Footer */}
+      <div className="container place-items-center p-5 text-sm">
+        <div className="flex flex-wrap place-content-center">
+          <a href={"#home"}>
+            <p className="px-3 hover:tracking-wider hover:text-yellow-800">
+              Home
+            </p>
+          </a>{" "}
+          |
+          <a href={"#about"}>
+            <p className="px-3 hover:tracking-wider hover:text-yellow-800">
+              About
+            </p>
+          </a>{" "}
+          |
+          <a href={"#products"}>
+            <p className="px-3 hover:tracking-wider hover:text-yellow-800">
+              Products
+            </p>
+          </a>{" "}
+          |
+          <a href={"#contact"}>
+            <p className="px-3 hover:tracking-wider hover:text-yellow-800">
+              Contact
+            </p>
+          </a>{" "}
+          |
+          <a href={"#careers"}>
+            <p className="px-3 hover:tracking-wider hover:text-yellow-800">
+              Careers
+            </p>
+          </a>
+        </div>
+        <div className="flex place-content-center">
+          <p>Copyright 2024 &copy; Leona Chemicals</p>
+        </div>
       </div>
     </main>
   );
