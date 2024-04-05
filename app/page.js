@@ -46,9 +46,9 @@ export default function Home() {
         </a>
       </div>
 
-      <div className="mt-10 absolute z-[-2] bg-amber-200/20 w-1/2 min-h-full place-self-start"></div>
+      <div className="mt-10 absolute z-[-2] bg-amber-200/20 w-1/2 min-h-screen place-self-start"></div>
 
-      <div className="min-h-screen align-middle place-content-center text-center">
+      <div className="min-h-screen min-w-full align-middle place-content-center text-center  border-b border-slate-900">
         <div className="relative flex place-content-center">
           <Image
             className="relative opacity-60  hover:opacity-100"
@@ -83,7 +83,7 @@ export default function Home() {
       </div>
 
       {/* Main */}
-      <div className="relative flex flex-wrap min-h-screen w-full border-y border-slate-800">
+      <div className="relative flex flex-wrap min-h-screen w-full border-slate-800">
         {/* Information */}
         <div className="sm:w-1/2 w-full min-h-screen text-center pt-8 sm:border-0 border-b border-slate-900">
           {/* About us */}
