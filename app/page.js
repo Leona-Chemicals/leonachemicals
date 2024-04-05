@@ -6,8 +6,6 @@ import { useState } from "react";
 import localFont from "next/font/local";
 import Iframe from "react-iframe";
 
-const Algerian = localFont({ src: "./algerian.woff2" });
-
 export default function Home() {
   let data = productData;
   const [search, setsearch] = useState("");
@@ -21,6 +19,7 @@ export default function Home() {
       id="home"
       className="flex min-h-screen flex-col items-center justify-between"
     >
+      <link href="https://db.onlinewebfonts.com/c/c144af7d488f9069913d40dee3cd1f70?family=Algerian" rel="stylesheet"></link>
       <div className="relative flex w-full h-auto py-2 align-middle md:place-content-end place-content-center border-b border-slate-800">
         <a href={"#home"}>
           <div className="px-4 mx-2 border border-slate-900 rounded-sm hover:border-amber-900">
@@ -60,7 +59,8 @@ export default function Home() {
             priority
           />
         </div>
-        <h1 className="Algerian transition-all select-none	tracking-wider text-5xl xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl font-algerian sm:p-10 p-2">
+        <h1 className="transition-all select-none	tracking-wider text-5xl xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl font-algerian sm:p-10 p-2"
+        style={{fontFamily: "Algerian"}}>
           <span className="hover:tracking-widest hover:text-yellow-700">L</span>
           <span className="hover:tracking-widest hover:text-yellow-700">E</span>
           <span className="hover:tracking-widest hover:text-yellow-700">O</span>
@@ -115,20 +115,20 @@ export default function Home() {
               kindly email us at
             </p>
             <a href={"mailto:sales@leonachemicals.com"}>
-              <p className="font-bold sm:text-base md:text-lg text-xs tracking-wide hover:tracking-wider hover:text-yellow-800">
+              <p className="font-bold sm:text-base md:text-lg text-xs leading-6 tracking-wide hover:tracking-wider hover:text-yellow-800">
                 sales@leonachemicals.com
               </p>
             </a>
             <p>or call us at</p>
 
             <a href={"tel:+91 9930336966"}>
-              <p className="font-bold  sm:text-base md:text-lg text-sm tracking-wide hover:tracking-wider hover:text-yellow-800">
+              <p className="font-bold  sm:text-base md:text-lg text-sm leading-6 tracking-wide hover:tracking-wider hover:text-yellow-800">
                 +91 9930336966
               </p>
             </a>
 
             <a href={"tel:+91 9137794481"}>
-              <p className="font-bold  sm:text-base md:text-lg text-sm tracking-wide hover:tracking-wider hover:text-yellow-800">
+              <p className="font-bold  sm:text-base md:text-lg text-sm leading-6 tracking-wide hover:tracking-wider hover:text-yellow-800">
                 +91 9137794481
               </p>
             </a>
