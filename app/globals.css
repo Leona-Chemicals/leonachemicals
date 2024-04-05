@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 240, 240, 240;
+  --background-end-rgb: 255, 255, 255;
+
+  --primary: #f1f1f1;
+  --secondary: rgba(18, 18, 18, 0.8);
+  --tertiary: rgba(120, 91, 13, 0.8);
+}
 
 * {
   /* border: 1px solid red; */
@@ -9,15 +18,33 @@
   transition-duration: 300ms;
 }
 
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 18px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 5px;
+  border: 3px solid var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tertiary);
+}
+::-webkit-scrollbar-thumb:focus {
+  background-color: var(--tertiary);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 240, 240, 240;
-  --background-end-rgb: 255, 255, 255;
-}
 
 /* @media (prefers-color-scheme: dark) {
   :root {
