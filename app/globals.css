@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 
   --primary: #f1f1f1;
-  --secondary: rgba(18, 18, 18, 0.8);
+  --secondary: rgba(18, 18, 18, 0.4);
   --tertiary: rgba(120, 91, 13, 0.8);
 }
 
@@ -16,30 +16,9 @@
   /* border: 1px solid red; */
   transition: all;
   transition-duration: 300ms;
+  scrollbar-width: thin;
 }
 
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 18px;
-}
-
-*::-webkit-scrollbar-track {
-  background: var(--primary);
-  border-radius: 5px;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: var(--secondary);
-  border-radius: 5px;
-  border: 3px solid var(--primary);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--tertiary);
-}
-::-webkit-scrollbar-thumb:focus {
-  background-color: var(--tertiary);
-}
 
 html {
   scroll-behavior: smooth;
