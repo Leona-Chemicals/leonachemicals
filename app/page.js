@@ -122,20 +122,20 @@ export default function Home() {
               kindly email us at
             </p>
             <a href={"mailto:sales@leonachemicals.com"}>
-              <p className="font-bold sm:text-base md:text-lg text-xs leading-6 tracking-wide hover:tracking-wider hover:text-yellow-800">
+              <p className="font-bold leading-8 sm:text-base md:text-lg lg:text-lg text-xs tracking-wide hover:tracking-wider hover:text-yellow-800">
                 sales@leonachemicals.com
               </p>
             </a>
             <p>or call us at</p>
 
             <a href={"tel:+91 9930336966"}>
-              <p className="font-bold  sm:text-base md:text-lg text-sm leading-6 tracking-wide hover:tracking-wider hover:text-yellow-800">
+              <p className="font-bold leading-8 sm:text-base md:text-lg lg:text-lg text-xs tracking-wide hover:tracking-wider hover:text-yellow-800">
                 +91 9930336966
               </p>
             </a>
 
             <a href={"tel:+91 9137794481"}>
-              <p className="font-bold  sm:text-base md:text-lg text-sm leading-6 tracking-wide hover:tracking-wider hover:text-yellow-800">
+              <p className="font-bold leading-8 sm:text-base md:text-lg lg:text-lg text-xs tracking-wide hover:tracking-wider hover:text-yellow-800">
                 +91 9137794481
               </p>
             </a>
@@ -168,7 +168,7 @@ export default function Home() {
             <br />
             <p>Send us an email at</p>
             <a href={"mailto:leonachemicals@gmail.com"}>
-              <p className="font-bold sm:text-base md:text-base text-xs hover:tracking-wider hover:text-yellow-800">
+              <p className="font-bold leading-8 sm:text-base md:text-lg lg:text-lg text-xs hover:tracking-wider hover:text-yellow-800">
                 leonachemicals@gmail.com
               </p>
             </a>
