@@ -3,16 +3,6 @@
 @tailwind utilities;
 
 
-@layer base {
-  @font-face {
-    font-family: 'Algerian';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(/fonts/algerian.ttf) format('ttf');
-  }
-}
-
 * {
   /* border: 1px solid red; */
   transition: all;

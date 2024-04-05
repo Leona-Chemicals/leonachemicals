@@ -3,7 +3,10 @@
 import Image from "next/image";
 import { productData } from "./productData";
 import { useState } from "react";
+import localFont from "next/font/local";
 import Iframe from "react-iframe";
+
+const Algerian = localFont({ src: "./algerian.woff2" });
 
 export default function Home() {
   let data = productData;
@@ -18,38 +21,38 @@ export default function Home() {
       id="home"
       className="flex min-h-screen flex-col items-center justify-between"
     >
-      <div className="relative flex w-full h-auto py-2 md:place-content-end place-content-center border-b border-slate-800">
-        <div className="px-4 mx-2">
-          <a href={"#home"}>
-            <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+      <div className="relative flex w-full h-auto py-2 align-middle md:place-content-end place-content-center border-b border-slate-800">
+        <a href={"#home"}>
+          <div className="px-4 mx-2 border border-slate-900 rounded-sm hover:border-amber-900">
+            <p className="sm:text-base text-sm font-medium hover:font-bold hover:tracking-wider hover:text-amber-800">
               Home
             </p>
-          </a>
-        </div>
+          </div>
+        </a>
 
-        <div className="px-4 mx-2">
-          <a href={"#products"}>
-            <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+        <a href={"#products"}>
+          <div className="px-4 mx-2 border border-slate-900 rounded-sm hover:border-amber-900">
+            <p className="sm:text-base text-sm font-medium hover:font-bold hover:tracking-wider hover:text-amber-800">
               Products
             </p>
-          </a>
-        </div>
+          </div>
+        </a>
 
-        <div className="px-4 mx-2 pr-8">
-          <a href={"#contact"}>
-            <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+        <a href={"#contact"}>
+          <div className="px-4 mx-2 pr-4 border border-slate-900 rounded-sm hover:border-amber-900">
+            <p className="sm:text-base text-sm font-medium hover:font-bold hover:tracking-wider hover:text-amber-800">
               Contact
             </p>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
 
-      <div className="mt-11 absolute z-[-2] bg-amber-200/20 w-1/2 min-h-full place-self-start"></div>
+      <div className="mt-10 absolute z-[-2] bg-amber-200/20 w-1/2 min-h-full place-self-start"></div>
 
       <div className="min-h-screen align-middle place-content-center text-center">
-        <div className="relative flex z-[-1] place-content-center">
+        <div className="relative flex place-content-center">
           <Image
-            className="relative opacity-70"
+            className="relative opacity-60  hover:opacity-100"
             src="/logo.png"
             alt="Next.js Logo"
             width={270}
@@ -57,7 +60,7 @@ export default function Home() {
             priority
           />
         </div>
-        <h1 className="transition-all select-none	tracking-wider text-5xl xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl font-algerian p-10">
+        <h1 className="Algerian transition-all select-none	tracking-wider text-5xl xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl font-algerian sm:p-10 p-2">
           <span className="hover:tracking-widest hover:text-yellow-700">L</span>
           <span className="hover:tracking-widest hover:text-yellow-700">E</span>
           <span className="hover:tracking-widest hover:text-yellow-700">O</span>
@@ -74,7 +77,7 @@ export default function Home() {
           <span className="hover:tracking-widest hover:text-yellow-700">L</span>
           <span className="hover:tracking-widest hover:text-yellow-700">S</span>
         </h1>
-        <p className="tracking-wide text-lg hover:text-xl select-none">
+        <p className="text-wrap tracking-wide xl:text-xl lg:text-lg sm:text-lg text-xs select-none hover:tracking-tight">
           Indenting Company & Sourcing Agent
         </p>
       </div>
@@ -112,20 +115,20 @@ export default function Home() {
               kindly email us at
             </p>
             <a href={"mailto:sales@leonachemicals.com"}>
-              <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+              <p className="font-bold sm:text-base md:text-lg text-xs tracking-wide hover:tracking-wider hover:text-yellow-800">
                 sales@leonachemicals.com
               </p>
             </a>
             <p>or call us at</p>
 
             <a href={"tel:+91 9930336966"}>
-              <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+              <p className="font-bold  sm:text-base md:text-lg text-sm tracking-wide hover:tracking-wider hover:text-yellow-800">
                 +91 9930336966
               </p>
             </a>
 
             <a href={"tel:+91 9137794481"}>
-              <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+              <p className="font-bold  sm:text-base md:text-lg text-sm tracking-wide hover:tracking-wider hover:text-yellow-800">
                 +91 9137794481
               </p>
             </a>
@@ -136,8 +139,10 @@ export default function Home() {
             <p className="font-bold underline pb-5 tracking-wider">
               Business Hours
             </p>{" "}
-            <p> Monday to Friday - 10:00 a.m. to 06:00 p.m. </p>
+            <p> Monday to Friday - 10:00a.m. to 06:00 p.m. </p>
+            <br />
             <p> Saturday - 10:00 a.m. to 02:00 p.m. </p>
+            <br />
             <p> Sunday - Closed </p>
           </div>
 
@@ -156,11 +161,10 @@ export default function Home() {
             <br />
             <p>Send us an email at</p>
             <a href={"mailto:leonachemicals@gmail.com"}>
-              <p className="font-bold hover:tracking-wider hover:text-yellow-800">
+              <p className="font-bold sm:text-base md:text-base text-xs hover:tracking-wider hover:text-yellow-800">
                 leonachemicals@gmail.com
               </p>
             </a>
-            <p className="font-bold"></p>{" "}
           </div>
 
           <div className="sm:m-20 m-10 min-h-64 border sm:text-xl text-lg border-slate-900 rounded">
@@ -198,8 +202,8 @@ export default function Home() {
             />
           </div>
           <div
-            className="grid grid-cols-1 divide-y py-5 m-4"
-            style={{ maxHeight: "130vw", overflowY: "auto" }}
+            className="grid grid-cols-1 divide-y my-5 m-4 sm:max-h-[3520px] md:max-h-[2380px] lg:max-h-[1960px] max-h-[2160px] overflow-auto"
+            // style={{ minHeight: "2160px", overflowY: "scroll" }}
           >
             {searchData.length !== 0 ? (
               searchData.map((row, index) => (
@@ -215,40 +219,40 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div className="container place-items-center p-5 text-sm">
+      <div className="container place-items-center p-3 text-sm leading-7 bg-slate-900 text-white">
         <div className="flex flex-wrap place-content-center">
           <a href={"#home"}>
-            <p className="px-3 hover:tracking-wider hover:text-yellow-800">
+            <p className="px-3 hover:tracking-wider hover:text-yellow-300">
               Home
             </p>
           </a>{" "}
           |
           <a href={"#about"}>
-            <p className="px-3 hover:tracking-wider hover:text-yellow-800">
+            <p className="px-3 hover:tracking-wider hover:text-yellow-300">
               About
             </p>
           </a>{" "}
           |
           <a href={"#products"}>
-            <p className="px-3 hover:tracking-wider hover:text-yellow-800">
+            <p className="px-3 hover:tracking-wider hover:text-yellow-300">
               Products
             </p>
           </a>{" "}
           |
           <a href={"#contact"}>
-            <p className="px-3 hover:tracking-wider hover:text-yellow-800">
+            <p className="px-3 hover:tracking-wider hover:text-yellow-300">
               Contact
             </p>
           </a>{" "}
           |
           <a href={"#careers"}>
-            <p className="px-3 hover:tracking-wider hover:text-yellow-800">
+            <p className="px-3 hover:tracking-wider hover:text-yellow-300">
               Careers
             </p>
           </a>
         </div>
         <div className="flex place-content-center">
-          <p>Copyright 2024 &copy; Leona Chemicals</p>
+          <p>Copyright &copy; Leona Chemicals, 2024</p>
         </div>
       </div>
     </main>

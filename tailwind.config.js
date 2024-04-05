@@ -15,7 +15,7 @@ module.exports = {
     },
     fontFamily: {
       'algerian': ['Algerian']
-    }
+    },
   },
   plugins: [],
 };
