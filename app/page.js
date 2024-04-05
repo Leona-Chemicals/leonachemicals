@@ -63,7 +63,7 @@ export default function Home() {
           />
         </div>
         <h1
-          className="transition-all select-none	tracking-wider text-5xl xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl font-algerian sm:p-10 p-2"
+          className="transition-all select-none	tracking-wider text-5xl xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl font-algerian sm:p-10 p-8"
           style={{ fontFamily: "Algerian" }}
         >
           <span className="hover:tracking-widest hover:text-yellow-700 pl-3">L</span>
