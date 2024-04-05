@@ -66,7 +66,7 @@ export default function Home() {
           className="transition-all select-none	tracking-wider text-5xl xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl font-algerian sm:p-10 p-2"
           style={{ fontFamily: "Algerian" }}
         >
-          <span className="hover:tracking-widest hover:text-yellow-700">L</span>
+          <span className="hover:tracking-widest hover:text-yellow-700 pl-3">L</span>
           <span className="hover:tracking-widest hover:text-yellow-700">E</span>
           <span className="hover:tracking-widest hover:text-yellow-700">O</span>
           <span className="hover:tracking-widest hover:text-yellow-700">N</span>
@@ -80,7 +80,7 @@ export default function Home() {
           <span className="hover:tracking-widest hover:text-yellow-700">C</span>
           <span className="hover:tracking-widest hover:text-yellow-700">A</span>
           <span className="hover:tracking-widest hover:text-yellow-700">L</span>
-          <span className="hover:tracking-widest hover:text-yellow-700">S</span>
+          <span className="hover:tracking-widest hover:text-yellow-700 pr-3">S</span>
         </h1>
         <p className="text-wrap tracking-wide xl:text-xl lg:text-lg sm:text-lg text-xs select-none hover:tracking-tight">
           Indenting Company & Sourcing Agent
