@@ -19,7 +19,10 @@ export default function Home() {
       id="home"
       className="flex min-h-screen flex-col items-center justify-between"
     >
-      <link href="https://db.onlinewebfonts.com/c/c144af7d488f9069913d40dee3cd1f70?family=Algerian" rel="stylesheet"></link>
+      <link
+        href="https://db.onlinewebfonts.com/c/c144af7d488f9069913d40dee3cd1f70?family=Algerian"
+        rel="stylesheet"
+      ></link>
       <div className="relative flex w-full h-auto py-2 align-middle md:place-content-end place-content-center border-b border-slate-800">
         <a href={"#home"}>
           <div className="px-4 mx-2 border border-slate-900 rounded-sm hover:border-amber-900">
@@ -59,8 +62,10 @@ export default function Home() {
             priority
           />
         </div>
-        <h1 className="transition-all select-none	tracking-wider text-5xl xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl font-algerian sm:p-10 p-2"
-        style={{fontFamily: "Algerian"}}>
+        <h1
+          className="transition-all select-none	tracking-wider text-5xl xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl font-algerian sm:p-10 p-2"
+          style={{ fontFamily: "Algerian" }}
+        >
           <span className="hover:tracking-widest hover:text-yellow-700">L</span>
           <span className="hover:tracking-widest hover:text-yellow-700">E</span>
           <span className="hover:tracking-widest hover:text-yellow-700">O</span>
@@ -84,12 +89,14 @@ export default function Home() {
 
       {/* Main */}
       <div className="relative flex flex-wrap min-h-screen w-full border-slate-800">
+
         {/* Information */}
         <div className="sm:w-1/2 w-full min-h-screen text-center pt-8 sm:border-0 border-b border-slate-900">
+
           {/* About us */}
           <div
             id="about"
-            className="sm:m-20 m-10 sm:p-16 p-8 border sm:text-xl text-lg border-slate-900 bg-amber-700/30 hover:bg-amber-700/40 rounded"
+            className="sm:m-10 lg:m-20 m-10 sm:p-8 p-8 border sm:text-xl text-lg border-slate-900 bg-amber-700/30 hover:bg-amber-700/40 rounded"
           >
             <p>
               We're here to take care of your requirements for{" "}
@@ -108,7 +115,7 @@ export default function Home() {
           {/* Contact Information */}
           <div
             id="contact"
-            className="sm:m-20 m-10 sm:p-16 p-8 border sm:text-xl text-lg border-slate-900 hover:bg-slate-500/40  rounded"
+            className="sm:m-10 lg:m-20 m-10 sm:p-8 p-8 border sm:text-xl text-lg border-slate-900 hover:bg-slate-500/40  rounded"
           >
             <p>
               For your import requirements or in case of any further queries,
@@ -135,7 +142,7 @@ export default function Home() {
           </div>
 
           {/* Timing Information */}
-          <div className="sm:m-20 m-10 sm:p-16 p-8 border sm:text-xl text-lg font-light tracking-wide border-slate-900 hover:bg-slate-900/90 rounded bg-slate-900/80 text-slate-100">
+          <div className="sm:m-10 lg:m-20 m-10 sm:p-8 p-8 border sm:text-xl text-lg font-light tracking-wide border-slate-900 hover:bg-slate-900/90 rounded bg-slate-900/80 text-slate-100">
             <p className="font-bold underline pb-5 tracking-wider">
               Business Hours
             </p>{" "}
@@ -149,7 +156,7 @@ export default function Home() {
           {/* Career Information */}
           <div
             id="careers"
-            className="sm:m-20 m-10 sm:p-16 p-8 border sm:text-xl text-lg border-slate-900 hover:bg-slate-200 rounded"
+            className="sm:m-10 lg:m-20 m-10 sm:p-8 p-8 border sm:text-xl text-lg border-slate-900 hover:bg-slate-200 rounded"
           >
             <p className="font-bold underline pb-5 tracking-wider">
               Want to work with us?
@@ -167,7 +174,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="sm:m-20 m-10 min-h-64 border sm:text-xl text-lg border-slate-900 rounded">
+          <div className="sm:m-10 lg:m-20 m-10 min-h-64 border sm:text-xl text-lg border-slate-900 rounded">
             <div>
               <p className="p-5 bg-amber-600/20 border-b border-slate-900">
                 Based in Mumbai, India
@@ -187,7 +194,7 @@ export default function Home() {
         {/* Product List */}
         <div className="sm:w-1/2 w-full min-h-screen place-items-center text-center sm:border-l border-0  border-slate-800">
           <div id="products">
-            <h1 className="text-xl font-bold pt-5 pb-3"> Product List</h1>
+            <h1 className="text-xl font-bold mt-10 pt-5 pb-3"> Product List</h1>
           </div>
           <div className="relative flex">
             <input
@@ -202,7 +209,7 @@ export default function Home() {
             />
           </div>
           <div
-            className="grid grid-cols-1 divide-y my-5 m-4 sm:max-h-[3520px] md:max-h-[2380px] lg:max-h-[1960px] max-h-[2160px] overflow-auto"
+            className="grid grid-cols-1 divide-y my-5 m-4 sm:max-h-[1820px] md:max-h-[1580px] lg:max-h-[1620px] max-h-[1620px] overflow-auto"
             // style={{ minHeight: "2160px", overflowY: "scroll" }}
           >
             {searchData.length !== 0 ? (
@@ -219,34 +226,34 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div className="container place-items-center p-3 text-sm leading-7 bg-slate-900 text-white">
+      <div className="min-w-full place-items-center p-3 text-sm leading-7 border-t border-slate-900 bg-slate-100 ">
         <div className="flex flex-wrap place-content-center">
           <a href={"#home"}>
-            <p className="px-3 hover:tracking-wider hover:text-yellow-300">
+            <p className="px-3 mx-2 hover:tracking-wider hover:text-yellow-700">
               Home
             </p>
           </a>{" "}
           |
           <a href={"#about"}>
-            <p className="px-3 hover:tracking-wider hover:text-yellow-300">
+            <p className="px-3 mx-2 hover:tracking-wider hover:text-yellow-700">
               About
             </p>
           </a>{" "}
           |
           <a href={"#products"}>
-            <p className="px-3 hover:tracking-wider hover:text-yellow-300">
+            <p className="px-3 mx-2 hover:tracking-wider hover:text-yellow-700">
               Products
             </p>
           </a>{" "}
           |
           <a href={"#contact"}>
-            <p className="px-3 hover:tracking-wider hover:text-yellow-300">
+            <p className="px-3 mx-2 hover:tracking-wider hover:text-yellow-700">
               Contact
             </p>
           </a>{" "}
           |
           <a href={"#careers"}>
-            <p className="px-3 hover:tracking-wider hover:text-yellow-300">
+            <p className="px-3 mx-2 hover:tracking-wider hover:text-yellow-700">
               Careers
             </p>
           </a>
